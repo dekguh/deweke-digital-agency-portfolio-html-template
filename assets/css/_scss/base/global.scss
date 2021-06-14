@@ -1,0 +1,130 @@
+@for $i from 1 through 8 {
+    .margin-top-#{$i*10} {
+        margin-top: #{$i*10}px;
+    }
+}
+
+@for $i from 1 through 8 {
+    .margin-bottom-#{$i*10} {
+        margin-bottom: #{$i*10}px;
+    }
+}
+
+@for $i from 1 through 8 {
+    .padding-top-#{$i*10} {
+        padding-top: #{$i*10}px;
+    }
+}
+
+@for $i from 1 through 8 {
+    .padding-bottom-#{$i*10} {
+        padding-bottom: #{$i*10}px;
+    }
+}
+
+.title-section {
+    margin-bottom: 40px;
+    width: 50%;
+    text-align: center;
+
+    .subtitle {
+        color: $color-red;
+    }
+
+    .title {
+        position: relative;
+        padding-bottom: 15px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 64px;
+            height: 2px;
+            background-color: $color-red;
+        }
+    }
+}
+
+.bg-black-transparent {
+    position: relative;
+    background-color: rgba($color: $color-black, $alpha: .25);
+    width: 100%;
+    height: 100%;
+}
+
+.owl-custom {
+    position: relative;
+
+    .owl-nav {
+        position: relative;
+        margin-top: 30px;
+
+        [class*="owl-"]:hover {
+            background: none !important;
+            color: $color-red;
+        }
+
+        .owl-prev {
+            position: absolute;
+            left: 0;
+            background: none !important;
+
+            :hover {
+                background: none !important;
+            }
+        }
+
+        .owl-next {
+            position: absolute;
+            right: 0;
+        }
+    }
+
+    .owl-dots {
+        .owl-dot {
+            height: 8px;
+            span {
+                height: 8px;
+                width: 4px;
+                background: $color-white;
+                border-radius: 0;
+                margin: 2px 2px;
+                transition: height .4s;
+            }
+
+            &.active {
+                span {
+                    height: 16px;
+                    background-color: $color-red;
+                }
+            }
+        }
+    }
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    border: none;
+    border-bottom: 1px solid $color-white;
+    background-color: transparent;
+    border-radius: 0;
+    transition: border-color .6s;
+
+    &:focus {
+        background-color: transparent;
+        box-shadow: none;
+        border-color: $color-red;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .title-section {
+        width: 100%;
+    }
+}

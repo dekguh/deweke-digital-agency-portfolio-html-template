@@ -1,0 +1,38 @@
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    transition: .4s;
+
+    &.button-outline-white {
+        color: $color-white;
+        border: 1px solid $color-white;
+        background-color: transparent;
+
+        &:hover {
+            color: $color-white-secondary;
+            border-color: $color-white-secondary;
+        }
+    }
+
+    &.button-outline-red {
+        color: $color-red;
+        border: 1px solid $color-red;
+        background-color: transparent;
+
+        &:hover {
+            color: $color-red-secondary;
+            border-color: $color-red-secondary;
+        }
+    }
+
+    &.button-red {
+        color: $color-white;
+        border: 1px solid $color-red;
+        background-color: $color-red;
+
+        &:hover {
+            color: $color-white;
+            background-color: $color-red-secondary;
+        }
+    }
+}

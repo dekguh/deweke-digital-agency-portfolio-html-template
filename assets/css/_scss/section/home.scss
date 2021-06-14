@@ -1,0 +1,126 @@
+.home-wrapper {
+    position: relative;
+
+    .header-inner {
+        text-align: center;
+        padding: 30px 0;
+
+        .title-header {
+            font-family: $font-montserrat;
+            font-size: $size-h4;
+            font-weight: 600;
+            text-decoration: none;
+        }
+    }
+
+    .home-inner {
+        position: relative;
+        background-image: url('../images/bg-home.jpg');
+        @include bg-image;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .home-content {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        text-align: center;
+
+        .home-title {
+            font-weight: 700;
+            letter-spacing: 15px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            margin-bottom: 4px;
+        }
+    }
+
+    .home-counter {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: inline-block;
+        background-color: $color-white;
+        padding: 30px;
+        border-right: 4px solid $color-red;
+    }
+
+    .list-counter {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        .counter-item {
+            display: inline-block;
+            color: $color-black;
+            text-align: center;
+            margin: 0 30px 0 0;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        .number {
+            display: block;
+            position: relative;
+            font-size: 21px;
+            padding-bottom: 4px;
+            margin-bottom: 4px;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 20px;
+                height: 2px;
+                background-color: $color-red;
+            }
+        }
+
+        .unit {
+            margin-bottom: 0;
+            color: $color-gray;
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .home-wrapper {
+        .home-content {
+            .home-title {
+                font-size: 50px;
+                letter-spacing: 12px;
+            }
+        }
+
+        .list-counter {
+            .counter-item {
+                margin: 0 20px 0 0;
+            }
+
+            .number {
+                font-size: 16px;
+            }
+
+            .unit {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+@media (max-width: 575.98px) {
+    .home-wrapper {
+        .home-content {
+            .home-title {
+                font-size: 37px;
+                letter-spacing: 10px;
+            }
+        }
+    }
+}

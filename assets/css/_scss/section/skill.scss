@@ -1,0 +1,45 @@
+.skill-wrapper {
+    background-color: $color-black-secondary;
+
+    .skill-item {
+        position: relative;
+        @include bg-image;
+        height: 250px;
+        overflow: hidden;
+        cursor: pointer;
+
+        &:hover {
+            .skill-footer {
+                left: 0;
+            }
+        }
+    }
+
+    .skill-header {
+        padding: 20px;
+
+        .skill-number {
+            display: block;
+            font-size: 37px;
+            opacity: .4;
+        }
+    }
+
+    .skill-footer {
+        position: absolute;
+        bottom: 0;
+        left: -100%;
+        padding: 20px;
+        width: 100%;
+        max-width: 100%;
+        transition: left .4s;
+
+        .skill-title {
+            margin-bottom: 8px;
+        }
+
+        .skill-description {
+            margin-bottom: 0;
+        }
+    }
+}

@@ -1,0 +1,101 @@
+.video-wrapper {
+    background-image: url('../images/bg-video.jpg');
+    @include bg-image;
+
+    .video-header {
+        .video-subtitle {
+            color: $color-red;
+        }
+
+        .video-title {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 64px;
+                height: 2px;
+                background-color: $color-red;
+            }
+        }
+
+        .video-description {
+            margin-bottom: 0;
+        }
+    }
+
+    .video-content {
+        text-align: center;
+        padding-top: 80px;
+
+        .btn-play {
+            display: inline-block;
+            position: relative;
+            height: 68px;
+            width: 68px;
+            border-radius: 50%;
+
+            .icon-play {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: transparent;
+                font-size: 21px;
+                stroke-width: 37px;
+                stroke: $color-white;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 68px;
+                height: 68px;
+                border-radius: 50%;
+                background-color: rgba($color: $color-red, $alpha: .4);
+                box-shadow: 0 0 21px rgba($color: $color-red, $alpha: .8);
+                animation: play-btn 2s linear infinite;
+            }
+
+            &:hover {
+                &::after {
+                    content: '';
+                    animation: play-btn .8s linear infinite;
+                }
+            }
+        }
+    }
+}
+
+@keyframes play-btn {
+    0% {
+        box-shadow: 0 0 21px rgba($color: $color-red, $alpha: .8);
+    }
+
+    50% {
+        box-shadow: 0 0 6px rgba($color: $color-red, $alpha: 3);
+    }
+
+    100% {
+        box-shadow: 0 0 21x rgba($color: $color-red, $alpha: .8);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .video-wrapper {
+        .video-header {
+            margin-bottom: 0;
+        }
+
+        .video-content {
+            padding-top: 40px;
+        }
+    }
+}

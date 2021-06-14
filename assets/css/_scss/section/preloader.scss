@@ -1,0 +1,96 @@
+.preloader-wrapper {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    background-color: $color-black;
+
+    .preloader-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    %preloader-setting {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 68px;
+        height: 68px;
+        border-radius: 50%;
+    }
+
+    .preloader-block-1 {
+        @extend %preloader-setting;
+        background-color: rgba($color: $color-red, $alpha: .5);
+        animation: preloader-1 3s infinite linear;
+    }
+
+    .preloader-block-2 {
+        @extend %preloader-setting;
+        background-color: rgba($color: $color-red, $alpha: 0);
+        animation: preloader-2 3s infinite linear;
+    }
+
+    .preloader-block-3 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        border: 1px solid $color-red;
+        background-color: transparent;
+        animation: preloader-3 3s infinite linear;
+    }
+}
+
+@keyframes  preloader-1 {
+    0% {
+        background-color: rgba($color: $color-red, $alpha: .5);
+        transform: translate(-50%, -50%) scale(1.0);
+    }
+
+    60% {
+        background-color: rgba($color: $color-red, $alpha: 0);
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    100% {
+        background-color: rgba($color: $color-red, $alpha: 0);
+        transform: translate(-50%, -50%) scale(1.0);
+    }
+}
+
+@keyframes  preloader-2 {
+    0% {
+        background-color: rgba($color: $color-red, $alpha: 0);
+        transform: translate(-50%, -50%) scale(1.0);
+    }
+
+    40% {
+        background-color: rgba($color: $color-red, $alpha: .5);
+        transform: translate(-50%, -50%) scale(1.0);
+    }
+
+    100% {
+        background-color: rgba($color: $color-red, $alpha: 0);
+        transform: translate(-50%, -50%) scale(0);
+    }
+}
+
+@keyframes  preloader-3 {
+    0% {
+        border-color: $color-red;
+    }
+
+    60% {
+        border-color: transparent;
+    }
+
+    100% {
+        border-color: $color-red;
+    }
+}

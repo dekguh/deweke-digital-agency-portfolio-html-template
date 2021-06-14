@@ -1,0 +1,127 @@
+.navigation-custom {
+    width: 100%;
+    margin-bottom: 30px;
+
+    .navigation-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+
+        .navigation-item {
+            display: inline-block;
+        }
+
+        .navigation-link {
+            padding: 0 15px;
+
+            &:hover {
+                color: $color-red;
+            }
+
+            &.active {
+                color: $color-red;
+            }
+        }
+    }
+
+    .navigation-back {
+        display: none;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+
+        .btn-navigation-back {
+            background-color: transparent;
+            border: none;
+            color: $color-white;
+
+            .text {
+                margin-left: $spacing-xs;
+            }
+
+            &:hover {
+                color: $color-red;
+                transition: color .6s;
+            }
+        }
+    }
+}
+
+.navigation-open {
+    display: none;
+    position: fixed;
+    z-index: 99;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background-color: $color-red;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    transition: .4s;
+
+    &:hover {
+        background-color: $color-black-secondary;
+    }
+
+    .btn-navigation-open {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: none;
+        padding: 0;
+        width: 100%;
+        background-color: transparent;
+        color: $color-white;
+        font-size: 21px;
+    }
+
+    &.close {
+        right: -60px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .navigation-custom {
+        position: fixed;
+        z-index: 999;
+        right: -100%;
+        top: 0;
+        background-color: $color-black-secondary;
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+        transition: right .8s;
+
+        .navigation-list {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+
+            .navigation-item {
+                display: block;
+                padding: 12px;
+            }
+
+            .navigation-link {
+                font-size: 28px;
+                &:hover {
+                    color: $color-white;
+                }
+            }
+        }
+
+        .navigation-back {
+            display: block;
+        }
+    }
+
+    .navigation-open {
+        display: block;
+    }
+}

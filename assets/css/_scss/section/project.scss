@@ -1,0 +1,24 @@
+.project-wrapper {
+    background-color: $color-black-secondary;
+
+    .project-item {
+        position: relative;
+        @include bg-image;
+        height: 350px;
+    }
+
+    .project-header {
+        padding: 20px;
+
+        .project-title {
+            margin-bottom: 8px;
+        }
+
+        .see-project {
+            transition: color .4s;
+            &:hover {
+                color: $color-red;
+            }
+        }
+    }
+}

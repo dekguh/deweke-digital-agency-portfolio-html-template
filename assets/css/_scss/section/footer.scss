@@ -1,0 +1,43 @@
+.footer-wrapper {
+    .footer-content {
+        border-top: 1px solid $color-white;
+        padding: 20px 0;
+    }
+
+    .list-social-media {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        .list-item {
+            display: inline-block;
+            margin-right: 4px;
+
+            a {
+                &:hover {
+                    color: $color-red;
+                }
+            }
+        }
+    }
+
+    .copyright {
+        font-size: 14px;
+        color: $color-white-secondary;
+        a {
+            font-weight: 600;
+
+            &:hover {
+                color: $color-red;
+            }
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .footer-wrapper {
+        .list-social-media {
+            margin-bottom: 20px;
+        }
+    }
+}
